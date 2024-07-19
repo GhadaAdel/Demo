@@ -1,13 +1,6 @@
 <?php
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-$routes = [
-    '/Demo/index' => 'controllers/index.php',
-    '/Demo/about' => 'controllers/about.php',
-    '/Demo/notes' => 'controllers/notes.php',
-    '/Demo/note' => 'controllers/note.php',
-];
+$routes = require ('routes.php');
 
 function routeToController($uri, $routes)
 {
@@ -26,5 +19,7 @@ function abort($code = 404)
 
     die();
 }
+
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 routeToController($uri, $routes);
