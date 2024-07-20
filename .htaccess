@@ -2,4 +2,4 @@ Options +SymLinksIfOwnerMatch
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /Demo/index.php [L]
+RewriteRule . /Demo/public/index.php [L]
