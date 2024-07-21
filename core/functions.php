@@ -1,5 +1,9 @@
 <?php
 
+//namespace Core;
+
+use Core\Response;
+
 function dd($value)
 {
     echo "<pre>";
