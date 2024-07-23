@@ -13,4 +13,8 @@ $router->patch('/Demo/note', 'controllers/notes/update.php');
 
 //common restful conventions: make a post request to the notes resource
 $router->post('/Demo/notes', 'controllers/notes/store.php'); 
+
+$router->get('/Demo/register', 'controllers/registration/create.php');
+$router->post('/Demo/register', 'controllers/registration/store.php');
+
 ?>
