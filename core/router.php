@@ -49,19 +49,14 @@ class Router
     {
         $this->routes[array_key_last($this->routes)]['middleware'] = $key;
 
-        return $this;
+        return $this; // To allow chaining later
     }
 
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
-                //the following if condition is added since the default for the middleware key is null
-                if ($route['middleware']) {
-                    $middleware = Middleware::MAP[$route['middleware']];
-
-                    (new $middleware)->handle();
-                }
+                Middleware::resolve($route['middleware']);
 
                 return require base_path($route['controller']);
             }
