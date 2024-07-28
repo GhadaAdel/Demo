@@ -18,4 +18,8 @@ $router->get('/Demo/register', 'controllers/registration/create.php')->only('gue
 
 $router->post('/Demo/register', 'controllers/registration/store.php');
 
+$router->get('/Demo/login', 'controllers/sessions/create.php');
+$router->post('/Demo/login', 'controllers/sessions/store.php');
+$router->delete('/Demo/logout', 'controllers/sessions/destroy.php')->only('auth');
+
 ?>
