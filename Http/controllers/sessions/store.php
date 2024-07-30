@@ -3,6 +3,7 @@
 use Core\Validator;
 use Core\Database;
 use Core\App;
+use Core\Session;
 use Http\forms\LoginForm;
 use Http\forms\Authenticator;
 
@@ -19,6 +20,6 @@ if ($form->validate($email, $password)) {
     $form->error('email','No matching account for the email address and password.');
 }
 
-return view('sessions/create.view.php', [
-    'errors' => $form->errors()
-]);
+Session::flash('errors', $form->errors());
+
+return redirect('/Demo/login');
