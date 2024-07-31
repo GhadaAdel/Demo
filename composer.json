@@ -1,0 +1,16 @@
+{
+    "name": "ghada/demo",
+    "authors": [
+        {
+            "name": "GhadaAdel",
+            "email": "gh.adel.aa@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
